@@ -1,5 +1,6 @@
 import styles from './TodoForm.module.scss'
 import { useRef } from 'react';
+import axios from 'axios';
 
 const TodoForm = () => {
 
@@ -8,8 +9,16 @@ const TodoForm = () => {
     const submitHandler = (e) => {
         e.preventDefault()
         if (inputRef.current.value === '') return
-        
-        console.log(inputRef.current.value)
+
+        axios.post('https://emtvxslrb7.execute-api.eu-central-1.amazonaws.com/v1', {
+            name: inputRef.current.value
+        })
+        .then(res => {
+            console.log(res)
+        })
+        .catch(err => {
+            console.log(err)
+        })
 
         inputRef.current.value = ''
     }
