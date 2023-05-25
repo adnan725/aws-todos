@@ -1,4 +1,5 @@
 import styles from './TodoForm.module.scss'
+import { motion } from 'framer-motion';
 import { useRef } from 'react';
 import axios from 'axios';
 
@@ -25,10 +26,14 @@ const TodoForm = () => {
 
     return <>
       <form className={styles.form} onSubmit={submitHandler}>
-          <div className={styles.innerWrapper}>
+          <motion.div className={styles.innerWrapper}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5}}
+          >
             <input ref={inputRef} type="text" id='item' />
             <button className={styles.btn}>Add</button>
-          </div>
+          </motion.div>
       </form>
     </>
 }

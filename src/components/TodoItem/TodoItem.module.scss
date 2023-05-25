@@ -32,7 +32,13 @@
     }
 
     .btnDelete {
-        background-color: rgb(199, 4, 4);
+        cursor: pointer;
+        transition: all 300ms;
+        background-color: #fa0000;
+
+        &:hover {
+            background-color: #c20101;
+        }
     }
 
     .line {
