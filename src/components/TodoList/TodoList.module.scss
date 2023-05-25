@@ -1,0 +1,21 @@
+.listWrapper {
+    padding: 3rem 2rem 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(39, 38, 38);
+
+    h2 {
+        color: white; 
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .addToList {
+        font-size: 1.2rem;
+        color: white;
+        margin-top: 2rem;
+    }
+}
