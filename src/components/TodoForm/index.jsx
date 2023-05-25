@@ -8,7 +8,7 @@ const TodoForm = () => {
 
     const submitHandler = (e) => {
         e.preventDefault()
-        if (inputRef.current.value === '') return
+        if (inputRef.current.value === '') alert('Please enter a task')
 
         axios.post('https://emtvxslrb7.execute-api.eu-central-1.amazonaws.com/v1', {
             name: inputRef.current.value

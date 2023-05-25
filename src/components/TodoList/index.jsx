@@ -6,12 +6,15 @@ const TodoList = () => {
 
     const MOCK_LIST = [
         {
+            id: 1,
             name: "Buy milk",
         }, 
         {
+            id: 2,
             name: "Buy eggs",
         }, 
         {
+            id: 3,
             name: "Cook Food",
         }
     ]
