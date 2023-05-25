@@ -10,7 +10,7 @@ const TodoForm = () => {
         e.preventDefault()
         if (inputRef.current.value === '') alert('Please enter a task')
 
-        axios.post('https://emtvxslrb7.execute-api.eu-central-1.amazonaws.com/v1', {
+        axios.post('https://oan6uah62f.execute-api.eu-central-1.amazonaws.com/v1/item', {
             name: inputRef.current.value
         })
         .then(res => {
