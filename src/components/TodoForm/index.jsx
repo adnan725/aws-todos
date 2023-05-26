@@ -25,11 +25,11 @@ const TodoForm = () => {
     }
 
     return <>
-      <form className={styles.form} onSubmit={submitHandler}>
-          <motion.div className={styles.innerWrapper}
+      <form onSubmit={submitHandler} className={styles.form}>
+          <motion.div  className={styles.innerWrapper}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5}}
+            transition={{ duration: 0.5, delay: 0.3}}
           >
             <input ref={inputRef} type="text" id='item' />
             <button className={styles.btn}>Add</button>
