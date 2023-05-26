@@ -1,0 +1,36 @@
+.container {
+    width: 32%;
+    height: 100vh;
+    background: red;
+    clip-path: polygon(25% 0, 100% 0, 100% 100%, 0 100%);
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 9999;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+
+    .cross {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+    }
+
+    .image {
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+        margin-bottom: 3rem;
+        transform: translate(-50%, -50%) ;
+        background-color: gray;
+    }
+
+    p {
+        padding-bottom: 2rem;
+    }
+}

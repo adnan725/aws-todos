@@ -1,4 +1,5 @@
 import TodoList from './components/TodoList'
+import Sidebar from './components/Sidebar'
 
 function App() {
 

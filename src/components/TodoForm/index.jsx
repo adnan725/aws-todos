@@ -7,19 +7,19 @@ const TodoForm = () => {
 
     const inputRef = useRef()
 
-    const submitHandler = (e) => {
+    const submitHandler = async (e) => {
         e.preventDefault()
         if (inputRef.current.value === '') alert('Please enter a task')
 
-        axios.post('https://oan6uah62f.execute-api.eu-central-1.amazonaws.com/v1/item', {
-            name: inputRef.current.value
-        })
-        .then(res => {
-            console.log(res)
-        })
-        .catch(err => {
-            console.log(err)
-        })
+        const endpoint = 'https://oan6uah62f.execute-api.eu-central-1.amazonaws.com/v1/item'
+        const data = inputRef.current.value;
+        const headers = {
+            'Content-Type': 'application/json',
+          };
+
+        const responce = await axios.post(endpoint, data, { headers })
+        const result = await responce.json()
+        console.log(result)
 
         inputRef.current.value = ''
     }
