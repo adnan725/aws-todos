@@ -5,7 +5,7 @@ const Sidebar = () => {
 
     const navItems = ['Services', 'Products', 'Contact']
 
-    return <>
+    return <>  
       <motion.div 
         className={styles.container}
         initial={{ opacity: 0, x: 500 }}

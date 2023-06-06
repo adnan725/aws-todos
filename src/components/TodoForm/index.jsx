@@ -1,27 +1,31 @@
 import styles from './TodoForm.module.scss'
 import { motion } from 'framer-motion';
 import { useRef } from 'react';
-import axios from 'axios';
+import { useDispatch, useSelector } from 'react-redux';
+import { addTodo, deleteTodo } from '../../store';
 
 const TodoForm = () => {
 
     const inputRef = useRef()
 
+    const dispatch = useDispatch();
+
     const submitHandler = async (e) => {
+
         e.preventDefault()
-        if (inputRef.current.value === '') alert('Please enter a task')
 
-        const endpoint = 'https://oan6uah62f.execute-api.eu-central-1.amazonaws.com/v1/item'
-        const data = inputRef.current.value;
-        const headers = {
-            'Content-Type': 'application/json',
-          };
+        const item = {
+            name: inputRef.current.value,
+            id: Date.now()
+        }
 
-        const responce = await axios.post(endpoint, data, { headers })
-        const result = await responce.json()
-        console.log(result)
+        if (item.name === '') {
+            alert('Please enter a task')
+        } else  {
+            dispatch(addTodo(item))
 
-        inputRef.current.value = ''
+            inputRef.current.value = ''
+        }
     }
 
     return <>

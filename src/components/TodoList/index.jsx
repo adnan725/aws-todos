@@ -2,24 +2,17 @@ import styles from './TodoList.module.scss'
 import TodoForm from "../TodoForm"
 import TodoItem from "../TodoItem"	
 import Sidebar from '../Sidebar'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useSelector } from 'react-redux';
 
 const TodoList = () => {
 
-    const MOCK_LIST = [
-        {
-            id: 1,
-            name: "Buy milk",
-        }, 
-        {
-            id: 2,
-            name: "Buy eggs",
-        }, 
-        {
-            id: 3,
-            name: "Cook Food",
-        }
-    ]
+    const todos = useSelector(state => state.todos);
+    const [list, setList] = useState([])
+
+    useEffect(() => {
+        setList(todos)
+    }, [todos])
 
     const [isOpen, setIsOpen] = useState(false)
 
@@ -36,7 +29,9 @@ const TodoList = () => {
         </div>
         <TodoForm />
         {
-            MOCK_LIST.length === 0 ? <p className={styles.addToList}>Add to you list</p> : MOCK_LIST.map((item, index) => <TodoItem key={index} list= {item} />)
+            list === null ? <p className={styles.addToList}>Add to you list</p> 
+            :
+            list.map((item) => <TodoItem key={item.id} item= {item} />)
         }
       </div>
     </>
