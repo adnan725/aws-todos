@@ -29,7 +29,7 @@ const TodoList = () => {
         </div>
         <TodoForm />
         {
-            list === null ? <p className={styles.addToList}>Add to you list</p> 
+            list.length === 0 ? <p className={styles.addToList}>Add to you list</p>
             :
             list.map((item) => <TodoItem key={item.id} item= {item} />)
         }

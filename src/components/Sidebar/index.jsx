@@ -12,9 +12,6 @@ const Sidebar = () => {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <div className={styles.cross}>
-            X
-        </div>
         <motion.div 
         className={styles.image}
         initial={{ opacity: 0, scale: 0}}
